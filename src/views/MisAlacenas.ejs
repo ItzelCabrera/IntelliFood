@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mis Alacenas</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
+    <meta name = "viewport" content="width=device-width,initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fjalla+One&family=Secular+One&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fjalla+One&family=Secular+One&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include ('partials/_header') %>
+    <!--Establecemos un video como el fondo de una seccion de la pagina-->
+    <main class="container main-container">
+        <!--
+        <video onloadedmetadata="this.muted=true" autoplay loop class="video-background">
+            <source src="./nyan.mp4">     
+        </video>
+        -->
+        <p class = "txt" id = "font4" align="center">Mis alacenas</p>
+        <ul style = "list-style-type: none" class = "lstAlacenas">
+            <% if (data){ %>
+                <% for(var i = 0; i<data.length; i++){ %>
+                    <li class = "bloque" id = "font2">
+                        <img src = "./anubis.png">
+                        <p class = "txt"><%= data[i].PantryName %></p>
+                        <a href="/gotoAlacena/<%= data[i].PantryCode %>"><btn type="button" class="btn btn-outline-dark text-center"><span class="material-icons">arrow_right_alt</span></btn></a>
+                    </li>
+                <%}%>
+            <%}%>
+        </ul>
+        <div class = "crear txt">
+            <a href="/gotoAgregarAlacena"><button type="button" class="btn btn-light">Agregar Alacena</button></a>
+        </div>
+    </main>
+    <%- include ('partials/_footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+    <link rel = 'stylesheet' href = '../styles.css'>
+</html>
