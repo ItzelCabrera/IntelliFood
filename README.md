@@ -1,2 +1,2 @@
 # IntelliFood
-Proyecto final de la materia de Ingeniería Web
+Proyecto web para la gestión de insumos en hogares. 
